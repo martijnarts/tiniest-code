@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def shift(string, key, decipher=False):
     return ''.join(
         chr((ord(c.upper())-65+key*(1-2*decipher)) % 26+65+32*c.islower())
