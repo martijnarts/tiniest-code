@@ -1,0 +1,8 @@
+#!/bin/bash
+for d in `find * -type d | grep -v '/~\.'`
+do
+    if [ ! ./$d/$d* ]
+    then
+        echo Failed at $d
+    fi
+done
