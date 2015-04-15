@@ -1,8 +1,15 @@
 #!/bin/bash
+SUCCESS=true
+
 for d in `find * -type d | grep -v '/~\.'`
 do
-    if [ ! ./$d/$d* ]
+    if ! ./$d/$d*
     then
-        echo Failed at $d
+        echo "Failed at $d"
+        SUCCESS=false
     fi
 done
+
+if ! $SUCCESS; then
+    exit 1
+fi
