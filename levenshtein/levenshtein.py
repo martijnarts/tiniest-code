@@ -14,6 +14,7 @@ def levenshtein(a, b):
                levenshtein(a, b[:-1]) + 1,
                levenshtein(a[:-1], b[:-1]) + cost)
 
+
 if __name__ == '__main__':
     assert levenshtein('cat', 'scent') == 3, levenshtein('cat', 'scent')
     assert levenshtein('back', 'book') == 2, levenshtein('back', 'book')
